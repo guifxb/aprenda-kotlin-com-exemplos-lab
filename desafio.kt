@@ -1,6 +1,6 @@
 // [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
 
-enum class Nivel { BASICO, INTERMEDIARIO, AVANCADO}
+enum class Nivel { BASICO, INTERMEDIARIO, AVANCADO }
 
 data class Usuario (val nome: String, var cursando: String = "nao matriculado") { //Atualizado para data class e inclusas as propriedades nome, curso que está cursando e conteúdo atual
     var conteudoAtual: List<ConteudoEducacional> = listOf()
@@ -15,9 +15,9 @@ data class Formacao(val nome: String, val conteudos: List<ConteudoEducacional>) 
 
     fun matricular(vararg usuario: Usuario) {
         usuario.forEach {
-            inscritos.add(it)
             it.cursando = nome
             it.conteudoAtual = conteudos.filter { it.nivel == Nivel.BASICO}  // matricula a turma ou um usuário no curso e atribui todos os conteúdos básicos
+            inscritos.add(it)
         }
     }
 }
